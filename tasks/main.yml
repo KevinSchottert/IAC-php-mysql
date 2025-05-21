@@ -1,0 +1,7 @@
+---
+- name: Install PHP MySQL package
+  ansible.builtin.apt:
+    name: "{{ php_mysql_packages }}"
+    state: present
+    update_cache: true
+  notify: Restart apache
